@@ -1,7 +1,7 @@
 {
-  "name": "node-api",
-  "version": "1.0.0",
-  "description": "",
+  "name": "valor",
+  "version": "0.0.1",
+  "description": "nodejs web applications framework",
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./"
