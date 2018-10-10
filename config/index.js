@@ -4,8 +4,8 @@ const path = require('path');
 
 const Config = {
   views: {
-    engine: 'pug',
-    path: path.resolve(__dirname, './app/views'),
+    engine: 'ejs',
+    path: path.resolve(__dirname, '../app/views'),
   },
 };
 

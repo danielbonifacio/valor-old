@@ -1,15 +1,13 @@
 'use strict';
 
 const normalize = require('normalize-port');
+const http = require('http');
+const reload = require('reload');
 const app = require('./app');
-
 const port = normalize(3000);
 
-app.set('view engine', 'pug');
-app.set('views', './app/views');
+const server = http.createServer(app);
 
-app.listen(port, (err) => {
-  if (err) {
-    console.log(err);
-  }
-});
+reload(app);
+
+server.listen(port, () => console.log('Server started'));
