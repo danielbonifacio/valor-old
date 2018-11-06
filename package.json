@@ -18,7 +18,8 @@
     "http": "0.0.0",
     "normalize-port": "^1.0.0",
     "pug": "^2.0.3",
-    "reload": "^2.3.1"
+    "reload": "^2.3.1",
+    "rimraf": "^2.6.2"
   },
   "devDependencies": {
     "nodemon": "^1.18.4",

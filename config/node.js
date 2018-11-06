@@ -2,6 +2,7 @@
 
 const path = require('path');
 const fs = require('fs');
+const rimraf = require('rimraf');
 
 /**
  * truncate project's directory
@@ -15,12 +16,13 @@ const truncate = level => {
   const remove = {
     docs() {
       const d = res('docs');
-      fs.existsSync(d) && fs.rmdirSync(d);
+      fs.existsSync(d) && rimraf.sync(d);
       return this;
     },
     git() {
       const g = res('.git');
-      fs.existsSync(g) && fs.rmdirSync(g);
+      console.log(g);
+      fs.existsSync(g) && rimraf.sync(g);
       return this;
     },
   };
@@ -32,7 +34,6 @@ const truncate = level => {
 
 // truncate(1);
 const getArgs = () => { process.argv.splice(0, 2); return process.argv };
-const getLevel = () => getArgs()[1];
 const args = getArgs();
 
-args.includes('truncate') && truncate(getLevel());
+args.includes('truncate') && truncate(1);
