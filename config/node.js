@@ -19,7 +19,7 @@ const truncate = level => {
       return this;
     },
     git() {
-      const g = res('git.teste');
+      const g = res('.git');
       fs.existsSync(g) && fs.rmdirSync(g);
       return this;
     },
