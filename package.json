@@ -1,15 +1,18 @@
 {
   "name": "valor",
   "version": "0.0.1",
-  "description": "nodejs web applications framework",
+  "description": "node.js web applications boilerplate",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./ -e .ejs,.pug,.js"
+    "start": "nodemon ./ -e .ejs,.pug,.js,.css",
+    "sass:watch": "sass --watch public/assets/scss:public/assets/css",
+    "truncate": "node config/node truncate 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "bootstrap": "^4.1.3",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "http": "0.0.0",
@@ -18,6 +21,9 @@
     "reload": "^2.3.1"
   },
   "devDependencies": {
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.4",
+    "webpack": "^4.20.2",
+    "webpack-dev-middleware": "^3.4.0",
+    "webpack-hot-middleware": "^2.24.3"
   }
 }
