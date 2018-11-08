@@ -1,3 +1,5 @@
+'use strict';
+
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -13,8 +15,10 @@ app.use(
   bodyParser.json(),
 );
 
+// Serves `public` folder as static
 app.use('/static', express.static(path.resolve(__dirname, '..', 'public')));
 
+// Base routes
 app.use('/', Routes.Home);
 
 module.exports = app;
