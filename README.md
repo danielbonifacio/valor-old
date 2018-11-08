@@ -1,4 +1,4 @@
-<center><img src="https://svgur.com/i/9GB.svg" width="320px"/></center>
+<div style="text-align: center;"><img src="https://svgur.com/i/9GB.svg" width="320px"/></div>
 Valor is a node.js boilerplate that uses express to serve web applications.
 
 How to use:
