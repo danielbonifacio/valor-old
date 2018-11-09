@@ -6,8 +6,13 @@ const bodyParser = require('body-parser');
 const Config = require('../config');
 const Routes = require('./routes');
 const app = express();
+const mustacheExpress = require('mustache-express');
 
-app.set('view engine', Config.views.engine);
+// .hbs engine registration
+app.engine('mustache', mustacheExpress());
+
+// app settings
+app.set('view engine', Config.views.engine, Config.views.extension);
 app.set('views', Config.views.path);
 
 app.use(

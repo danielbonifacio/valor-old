@@ -7,7 +7,8 @@ const Config = {
     port: process.env.PORT || 3000,
   },
   views: {
-    engine: 'ejs',
+    engine: 'mustache',
+    extension: 'hbs',
     path: path.resolve(__dirname, '../app/views'),
   },
   sass: {
