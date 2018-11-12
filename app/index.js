@@ -6,11 +6,11 @@ const bodyParser = require('body-parser');
 const Config = require('../config');
 const Routes = require('./routes');
 const app = express();
-const mustacheExpress = require('mustache-express');
-
-app.engine('mustache', mustacheExpress(Config.views.path + '/partials', '.mustache'));
+const hbs = require('../core/Handlebars');
 
 // app settings
+app.engine('hbs', hbs.engine);
+
 app.set('view engine', Config.views.engine);
 app.set('views', Config.views.path);
 

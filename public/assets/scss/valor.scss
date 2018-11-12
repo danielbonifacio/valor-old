@@ -1,0 +1,15 @@
+$dark: #1F1D20;
+$red: #D33831;
+$white: #FFFFFF;
+
+body {
+  background-color: $dark;
+  color: $white;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: $red;
+  text-decoration: none;
+}

@@ -7,13 +7,13 @@ const Config = {
     port: process.env.PORT || 3000,
   },
   views: {
-    engine: 'mustache',
+    engine: 'hbs',
     path: path.resolve(__dirname, '../app/views'),
   },
   sass: {
     src: path.resolve(__dirname, '../public/scss'),
     dest: path.resolve(__dirname, '../public/css'),
-  },
+  }
 };
 
 module.exports = Config;
