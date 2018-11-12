@@ -8,7 +8,6 @@ const Config = {
   },
   views: {
     engine: 'mustache',
-    extension: 'hbs',
     path: path.resolve(__dirname, '../app/views'),
   },
   sass: {

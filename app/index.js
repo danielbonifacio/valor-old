@@ -8,11 +8,10 @@ const Routes = require('./routes');
 const app = express();
 const mustacheExpress = require('mustache-express');
 
-// .hbs engine registration
-app.engine('mustache', mustacheExpress());
+app.engine('mustache', mustacheExpress(Config.views.path + '/partials', '.mustache'));
 
 // app settings
-app.set('view engine', Config.views.engine, Config.views.extension);
+app.set('view engine', Config.views.engine);
 app.set('views', Config.views.path);
 
 app.use(
