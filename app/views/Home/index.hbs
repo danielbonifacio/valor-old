@@ -1,5 +1,32 @@
-<div class="container">
-  <img src="{{ asset 'img/valor_logo_light.svg' }}">
-  {{ message }}
-  dasdasdas
-</div>
+<header>
+  <div class="app-title">
+    <h1>
+      <span>{{ page.title }}</span>
+      <img src="{{ asset 'img/valor_logo.svg' }}" alt="Valor Express Boilerplate">
+    </h1>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="row features">
+      {{#each features}}
+      <div class="col-lg-3">
+        <div class="feature">
+          <div class="title">{{ this.title }}</div>
+          <div class="description">{{ this.description }}</div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    <div class="see-documentation">
+      <a href="#" class="button">Read the documentation</a>
+      <a href="#" class="button">Download <small>v0.0.1</small></a>
+    </div>
+    <div class="row code-example">
+      <div class="col-lg-6">
+        <pre><code class="js">{{ codeSample }}</code></pre>
+      </div>
+    </div>
+  </div>
+</main>

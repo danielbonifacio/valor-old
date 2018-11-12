@@ -1,5 +1,7 @@
 'use strict';
 
+require('module-alias/register')
+
 const normalize = require('normalize-port');
 const Config = require('./config');
 const http = require('http');

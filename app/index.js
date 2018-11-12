@@ -3,10 +3,12 @@
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
-const Config = require('../config');
-const Routes = require('./routes');
+const Config = require('@config');
+const Routes = require('@routes');
+const Route = require('@core/Route');
+const Web = require('@routes/web');
+const hbs = require('@core/Handlebars');
 const app = express();
-const hbs = require('../core/Handlebars');
 
 // app settings
 app.engine('hbs', hbs.engine);
@@ -22,7 +24,10 @@ app.use(
 // Serves `public` folder as static
 app.use('/static', express.static(path.resolve(__dirname, '..', 'public')));
 
-// Base routes
-app.use('/', Routes.Home);
+/**
+ * Base routes
+ * This is just prefix of common route groups
+ */
+app.use('/', new Route(Web).register());
 
 module.exports = app;

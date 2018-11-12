@@ -1,5 +1,5 @@
 const expbhs = require('express-handlebars');
-const Config = require('../config');
+const Config = require('@config');
 
 const Handlebars = {
   defaultLayout: 'main',
@@ -10,6 +10,12 @@ const Handlebars = {
   helpers: {
     asset(fileName) {
       return `/static/assets/${fileName}`;
+    },
+
+    web(routeName) {
+      const routes = require('@routes/web');
+      const route = routes.find(route => route.name === routeName);
+      return `${route.path}`;
     },
   },
 };
