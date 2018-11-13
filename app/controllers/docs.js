@@ -2,6 +2,7 @@
 
 const RequestData = require('@core/RequestData');
 const Controller = require('@core/Controller');
+const Doc = require('@models/doc');
 
 /**
  * Documentation controller
@@ -24,8 +25,15 @@ module.exports = new Controller({
    * @param {object} res response
    */
   configuring(req, res) {
-    res.render('Docs/configuring', RequestData('Configuring > Docs - Valor', {
-      pagina: req.params.page,
-    }));
+    Doc.findOne({ route: 'docs/configuring' })
+      .then(data => {
+        console.log(data);
+        res.render('Docs/configuring',
+          RequestData(
+            'Configuring > Docs - Valor',
+            data,
+          )
+        );
+      });
   },
 }).export();
