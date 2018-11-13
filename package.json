@@ -6,7 +6,10 @@
   "scripts": {
     "start": "nodemon ./ -e ejs,hbs,pug,js,css",
     "sass:watch": "sass --watch public/assets/scss:public/assets/css",
-    "truncate": "node config/node truncate 1"
+    "truncate": "node config/node truncate 1",
+    "nodemon": "node core/Nodemon",
+    "watch": "parallelshell \"node core/Nodemon\" \"npm run sass:watch\"",
+    "sass:build": "node-sass -o resources/css resources/sass"
   },
   "author": "",
   "license": "ISC",
@@ -28,7 +31,9 @@
     "rimraf": "^2.6.2"
   },
   "devDependencies": {
+    "node-sass": "^4.10.0",
     "nodemon": "^1.18.4",
+    "parallelshell": "^3.0.2",
     "webpack": "^4.20.2",
     "webpack-dev-middleware": "^3.4.0",
     "webpack-hot-middleware": "^2.24.3"
