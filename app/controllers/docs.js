@@ -13,8 +13,19 @@ module.exports = new Controller({
    * @param {object} res response
    */
   index(req, res) {
-    res.render('Docs/index', RequestData('Documentação - Valor', {
-      teste: 'Controller de documentação: index',
+    res.render('Docs/index', RequestData('Docs - Valor', {
+      pagina: req.params.page,
+    }));
+  },
+
+  /**
+   * Index page method
+   * @param {object} req request
+   * @param {object} res response
+   */
+  configuring(req, res) {
+    res.render('Docs/configuring', RequestData('Configuring > Docs - Valor', {
+      pagina: req.params.page,
     }));
   },
 }).export();

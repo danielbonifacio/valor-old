@@ -15,6 +15,14 @@ class Route {
     this.routes.map(route => {
       !('controller' in route) && crash(`Controller not setted in route '${route.name || route.path}'`);
       const middlewares = fixMiddlewares(route.middlewares);
+      
+      if ('children' in route) {
+        const base_path = route.path;
+        route.children.map(child => {
+          this.router[child.method](base_path + child.path, fixMiddlewares(child.middlewares), child.controller);
+        });
+      }
+
       this.router[route.method](route.path, ...middlewares, route.controller);
     });
     return this.router;

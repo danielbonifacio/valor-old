@@ -171,3 +171,93 @@ nav {
     }
   }
 }
+
+#documentation {
+  .navbar {
+    border-right: 1px solid darken($white, 5%);
+    padding: 50px 20px 50px 0;
+
+    a {
+      transition: .25s ease;
+      color: rgba($red, .7);
+
+      &:hover,
+      .active {
+        color: $red;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+
+      li {
+        padding: 15px;
+
+        &:not(:last-child) {
+          border-bottom: 1px dashed darken($white, 5%);
+        }
+      }
+    }
+  }
+
+  .text {
+    padding: 50px 0;
+  }
+}
+
+h1, .h1 {
+  font-weight: 300;
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+h2, .h2 {
+  font-weight: 300;
+  font-size: 1.6em;
+  margin-bottom: 1em;
+}
+
+p {
+  color: lighten($dark, 30%);
+  font-size: 1.1em;
+  line-height: 1.5em;
+  font-weight: 400;
+  margin-bottom: 1.5em;
+}
+
+.small-margin {
+  margin-bottom: .5em;
+}
+
+strong, b {
+  font-weight: 500;
+  color: darken($red, 20%);
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid darken($white, 5%);
+  margin-bottom: 1em;
+}
+
+ol {
+  color: lighten($dark, 30%);
+  font-size: 1.1em;
+  line-height: 1.5em;
+  font-weight: 400;
+  margin-bottom: 1.5em;
+  padding-left: 2em;
+}
+
+code.inline {
+  color: $white;
+  background-color: $red;
+  border-radius: 3px;
+  padding: 5px;
+  white-space: nowrap;
+}
+
+small {
+  color: lighten($dark, 30%);
+  font-size: .8em;
+}
