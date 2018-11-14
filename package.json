@@ -4,6 +4,7 @@
   "description": "node.js web applications boilerplate",
   "main": "index.js",
   "scripts": {
+    "env:generate": "node core/Env --generate",
     "start": "nodemon ./ -e ejs,hbs,pug,js,css",
     "sass:watch": "sass --watch public/assets/scss:public/assets/css",
     "truncate": "node config/node truncate 1",
@@ -33,6 +34,7 @@
     "rimraf": "^2.6.2"
   },
   "devDependencies": {
+    "chalk": "^2.4.1",
     "node-sass": "^4.10.0",
     "nodemon": "^1.18.4",
     "parallelshell": "^3.0.2",
