@@ -3,16 +3,17 @@
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
-const Config = require('../config');
-const Routes = require('./routes');
+const Config = require('@config');
+const Routes = require('@routes');
+const Route = require('@core/Route');
+const Web = require('@routes/web');
+const hbs = require('@core/Handlebars');
 const app = express();
-const mustacheExpress = require('mustache-express');
-
-// .hbs engine registration
-app.engine('mustache', mustacheExpress());
 
 // app settings
-app.set('view engine', Config.views.engine, Config.views.extension);
+app.engine('hbs', hbs.engine);
+
+app.set('view engine', Config.views.engine);
 app.set('views', Config.views.path);
 
 app.use(
@@ -23,7 +24,10 @@ app.use(
 // Serves `public` folder as static
 app.use('/static', express.static(path.resolve(__dirname, '..', 'public')));
 
-// Base routes
-app.use('/', Routes.Home);
+/**
+ * Base routes
+ * This is just prefix of common route groups
+ */
+app.use('/', new Route(Web).register());
 
 module.exports = app;
