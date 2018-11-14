@@ -1,6 +1,7 @@
 'use strict';
 
 require('module-alias/register')
+require('dotenv').load();
 
 const normalize = require('normalize-port');
 const config = require('./config');

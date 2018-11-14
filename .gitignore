@@ -7,3 +7,6 @@ node_modules/
 # remove this in production
 /public/assets/css/*.css
 /public/assets/css/*.map
+
+# envirnonment
+.env
