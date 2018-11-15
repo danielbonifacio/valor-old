@@ -1,6 +1,8 @@
 'use strict';
+const RequestData = require('@core/RequestData');
+const Controller = require('@core/Controller');
 
-module.exports = {
+module.exports = new Controller({
   index(req, res) {
     const data = {
       page: {
@@ -45,6 +47,6 @@ module.exports = new Controller({
 }).export();`,
     };
 
-    res.render('Home/index', data);
+    res.render('Home/index', RequestData('Valor - Express Boilerplate', data));
   },
-};
+}).export();
