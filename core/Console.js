@@ -8,6 +8,14 @@ const log = {
   success(message) {
     return console.log(chalk.green(`  ${message}`));
   },
+
+  warning(message) {
+    return console.log(chalk.yellow(`  ${message}`));
+  },
+
+  clear() {
+    return console.clear();
+  },
 };
 
 module.exports = log;
