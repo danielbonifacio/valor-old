@@ -10,6 +10,7 @@ const reload = require('reload');
 const app = require('./app');
 const port = normalize(config.server.port);
 const mongoose = require('mongoose');
+const log = require('./core/Console');
 
 const server = http.createServer(app);
 
@@ -39,9 +40,11 @@ DataBase.on('error', console.error.bind(console, 'Can\'t connect to database:'))
 DataBase.on('open', function () {
   try {
     server.listen(port, () => {
-      console.log(`Server started on: http://localhost:${port}`);
+      log.clear();
+      log.warning('Valor dev-server is watching your data');
+      log.success(`Server available on: ${config.server.base_url}`);
     })
   } catch (err) {
-    console.log(`Error: ${err}`)
+    log.error(`Error: ${err}`);
   }
 });
