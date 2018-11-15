@@ -27,13 +27,7 @@ module.exports = new Controller({
   configuring(req, res) {
     Doc.findOne({ route: 'docs/configuring' })
       .then(data => {
-        console.log(data);
-        res.render('Docs/configuring',
-          RequestData(
-            'Configuring > Docs - Valor',
-            data,
-          )
-        );
+        res.render('Docs/configuring', RequestData('Configuring > Docs - Valor', data));
       });
   },
 }).export();
