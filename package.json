@@ -36,7 +36,7 @@
   "devDependencies": {
     "chalk": "^2.4.1",
     "node-sass": "^4.10.0",
-    "nodemon": "^1.18.4",
+    "nodemon": "^1.18.7",
     "parallelshell": "^3.0.2",
     "webpack": "^4.20.2",
     "webpack-dev-middleware": "^3.4.0",
